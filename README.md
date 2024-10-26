@@ -2,5 +2,5 @@
 
 ## Home works:
 
-###HW_lesson_2 cowers: 
+### HW_lesson_2 cowers: 
 - interaction in the console. Module readline. URLSearchParams method.
