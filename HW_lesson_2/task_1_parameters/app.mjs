@@ -5,21 +5,24 @@
 // і кажемо чи він є пенсіонером.
 // =============================================================================================
 
-
-
-import * as readline from 'node:readline/promises';
-import { stdin as input, stdout as output } from 'node:process';
+import * as readline from 'readline/promises';
+import { argv, stdin as input, stdout as output } from 'process';
 
 const rl = readline.createInterface({ input, output });
 
+const argsString = argv.slice(2).join('&')
+const argsURLParams = new URLSearchParams(argsString) //argsStrings takes --pension=65 in our case
+
+const pensionAge = argsURLParams.get('--pension')
 const answer = await rl.question('How old are you?');
+const userAge = parseInt(answer) //parse string to number
 
-const pensionOlder = 65;
 
-if (answer >= pensionOlder)
+if (userAge >= pensionAge)
     console.log(`You are ${answer} years old, so you are a pensioner.`);
-else if (answer !== NaN)
+else if (isNaN(userAge))
     console.log('Something is wrong here.');
 else console.log(`You are ${answer} years old, so you are not a pensioner.`);
 
 rl.close(); //to close readline. this is necessery to do.
+
