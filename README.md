@@ -1,4 +1,4 @@
-# NODE.js Coure by Andriy Bryla @2024
+# NODE.js Course by Andriy Bryla @2024
 
 ## Home works:
 
